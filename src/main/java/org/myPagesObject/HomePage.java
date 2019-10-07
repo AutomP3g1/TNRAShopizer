@@ -9,7 +9,9 @@ import org.openqa.selenium.support.PageFactory;
 
 public class HomePage extends GenericPage {
 
-	public List<WebElement> objectsCharacterList = driver.findElements(By.xpath("//div[@id=\"featuredItemsContainer\"]//h3"));
+	public List<WebElement> homePageElements = driver.findElements(By.xpath("//div[@id=\"featuredItemsContainer\"]//h3"));
+	public List<WebElement> homePagePrices = driver.findElements(By.xpath("//span[@itemprop='price']"));
+	
 	
 	public HomePage(WebDriver driver) {
 		super(driver);
@@ -27,7 +29,6 @@ public class HomePage extends GenericPage {
 //		return PageFactory.initElements(driver, PageTable.class);
 //	}
 	
-	
-
+		
 	
 }

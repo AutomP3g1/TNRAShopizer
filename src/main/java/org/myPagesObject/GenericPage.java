@@ -15,7 +15,7 @@ import org.openqa.selenium.support.How;
 
 public abstract class GenericPage {
 
-	public final static String URL = "http://192.168.102.118:8088/shopizer/shop";
+	public final static String URL = "http://192.168.102.118:8088/shopizer/";
 	protected final WebDriver driver;
 	public List<String> myListObString = new ArrayList<String>();
 
@@ -55,10 +55,11 @@ public abstract class GenericPage {
 
 	
 	//Méthode générique pour convertir une liste de WebElement en text
-	public void WebElementToArray(List<WebElement> objectList) {
+	public List<String> WebElementToArray(List<WebElement> objectList) {
 		for (WebElement e : objectList) {
 			myListObString.add(e.getText());
 		}
+		return myListObString;
 	}
 
 	

@@ -8,6 +8,7 @@ import org.myPagesObject.PageTable;
 
 public class TestTNR1 extends GenericTest {
 
+<<<<<<< HEAD
 	@Test
 	public void testTable() throws InterruptedException {
 		
@@ -52,5 +53,26 @@ public class TestTNR1 extends GenericTest {
 		Thread.sleep(1000);
 		
 	}
+=======
+	//@Test
+	//public void testTable() throws InterruptedException {
+			
+//		HomePage homePage = new HomePage(driver);
+//
+//		homePage.clickBandeauTable();
+//
+//		PageTable pageTable = new PageTable(driver);
+//
+//		//pageTable.locateElement(pageTable.filtreDefault);
+//		pageTable.filtreDefault.click();
+//		Thread.sleep(1000);
+//		assert
+//		//(pageTable.productTitles.isDisplayed());
+//
+//		
+//		pageTable.locateElement(pageTable.filtreRoots);
+//
+	//	}
+>>>>>>> 89185d28eaf2e4f69b1dbad278b6b1a54a78e3af
 
 }
