@@ -11,7 +11,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 
 public abstract class GenericTest {
 
-	WebDriver driver;
+	WebDriver driver; 
 	public String BROWSER = System.getProperty("browser");
 
 	public GenericTest() {
