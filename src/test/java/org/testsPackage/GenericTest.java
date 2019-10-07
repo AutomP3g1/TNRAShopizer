@@ -17,20 +17,19 @@ public abstract class GenericTest {
 	public GenericTest() {
 		super();
 
-		if (BROWSER.equalsIgnoreCase("Firefox")) {
+		if (BROWSER.equalsIgnoreCase("Firefox") || BROWSER.isEmpty()) {
 			System.setProperty("webdriver.gecko.driver", "C:\\Installation\\Drivers\\geckodriver.exe");
-			driver = new FirefoxDriver();
-		} else if (BROWSER.equalsIgnoreCase("Chrome")) {
-			System.setProperty("webdriver.chrome.driver", "C:\\Installation\\Drivers\\chromedriver.exe");
-		
-		} else if (BROWSER.isEmpty()) {
-			System.setProperty("webdriver.gecko.driver", "C:\\Installation\\Drivers\\geckodriver.exe");
-			driver = new FirefoxDriver();
+			driver = new FirefoxDriver();	
 		}
-		System.setProperty("webdriver.gecko.driver", "C:\\Installation\\Drivers\\geckodriver.exe");
-		driver = new FirefoxDriver();
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-		driver.navigate().to(GenericPage.URL);
+		else if (BROWSER.equalsIgnoreCase("Chrome")) {
+			System.setProperty("webdriver.chrome.driver", "C:\\Installation\\Drivers\\chromedriver.exe");
+			driver = new ChromeDriver();	
+		}
+		else if (BROWSER.equalsIgnoreCase("IE")) {
+			System.setProperty("webdriver.IEDriver.Server", "C:\\Installation\\Drivers\\IEDriverServer.exe");
+			driver = new InternetExplorerDriver();
+		}
+	
 	}
 
 	 @After
