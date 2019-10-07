@@ -5,20 +5,34 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 import org.myPagesObject.HomePage;
 import org.myPagesObject.PageTable;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class TestTNR1 extends GenericTest {
+public class TestTNR1bis {
+	WebDriver driver;
 
-<<<<<<< HEAD
 	@Test
 	public void testTable() throws InterruptedException {
-		
 		// pas 1 : Ouvrir un navigateur et accéder à l'application Shopizer
-		HomePage homePage = new HomePage(driver);
+		System.setProperty("webdriver.gecko.driver", "C:\\Installation\\drivers\\chromedriver.exe");
+		
+		driver =new ChromeDriver();
+		
+		driver.manage().window().maximize();
+		
+		driver.get("http://192.168.102.118:8088/shopizer");
+		Thread.sleep(2000);
+		
+		driver.findElement(By.xpath("//div[@class='mainmenu hidden-xs']//a[text()='Tables']")).click();
+		Thread.sleep(2000);
+		assertTrue(PageTable.userPath.isDisplayed()); // une arboresence apparait sous le titre de la page indiquant le chemin ou l'utilsateur se situe
+		
 
 		// pas 2 : Selectionner dans le menu horizontal la partie "Table"
-		homePage.clickBandeauTable();
 		PageTable pageTable = new PageTable(driver);
-		assertTrue(pageTable.userPath.isDisplayed()); // une arboresence apparait sous le titre de la page indiquant le chemin ou l'utilsateur se situe
+
 
 		// pas 3 : Verifier la présence des éléments:
 			/*
@@ -53,26 +67,5 @@ public class TestTNR1 extends GenericTest {
 		Thread.sleep(1000);
 		
 	}
-=======
-	//@Test
-	//public void testTable() throws InterruptedException {
-			
-//		HomePage homePage = new HomePage(driver);
-//
-//		homePage.clickBandeauTable();
-//
-//		PageTable pageTable = new PageTable(driver);
-//
-//		//pageTable.locateElement(pageTable.filtreDefault);
-//		pageTable.filtreDefault.click();
-//		Thread.sleep(1000);
-//		assert
-//		//(pageTable.productTitles.isDisplayed());
-//
-//		
-//		pageTable.locateElement(pageTable.filtreRoots);
-//
-	//	}
->>>>>>> 89185d28eaf2e4f69b1dbad278b6b1a54a78e3af
 
 }
