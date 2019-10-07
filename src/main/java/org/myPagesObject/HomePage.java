@@ -24,10 +24,10 @@ public class HomePage extends GenericPage {
 		return PageFactory.initElements(driver, PageTable.class);
 	}
 	
-//	public PageTable clickBandeauBedroom() {
-//		linkBedroom.click();
-//		return PageFactory.initElements(driver, PageTable.class);
-//	}
+	public BedroomPage clickBandeauBedroom() {
+		linkBedroom.click();
+		return PageFactory.initElements(driver, BedroomPage.class);
+	}
 	
 		
 	

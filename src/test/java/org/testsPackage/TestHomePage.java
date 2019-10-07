@@ -16,8 +16,7 @@ public class TestHomePage extends GenericTest {
 	public List<String> myListElements = new ArrayList<String>();
 	public List<String> myListElementsText = new ArrayList<String>();
 
-	public List<String> myListPrices = new ArrayList<String>();
-	public List<String> myListPricesText = new ArrayList<String>();
+
 
 	public TestHomePage() {
 
@@ -31,13 +30,14 @@ public class TestHomePage extends GenericTest {
 		HomePage home = new HomePage(driver);
 
 		// Conversion listes WebElements en listes String
-
 		myListElements = home.WebElementToArray(home.homePageElements);
 		myListElementsText = home.loadFile("src/test/resources/homePageElements.txt");
-		myListPrices = home.WebElementToArray(home.homePagePrices);
-
-		// To assert listItems
+		
+				
+		// To assert listItems with price
 		assertEquals(myListElementsText, myListElements);
+		
+
 
 	}
 
