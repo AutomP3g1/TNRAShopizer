@@ -15,9 +15,6 @@ public class PageTable extends GenericPage{
 		// TODO Auto-generated constructor stub
 	}
 
-	@FindBy(how = How.XPATH, using = "//div[@id='main_h']//a[text()='Tables']")
-	public WebElement itemTable;
-
 	@FindBy(how = How.XPATH, using = "//div[@id='productsContainer']//h3")  //utilise ...h3[n] pour localiser le produit
 	public WebElement productTitles;
 

@@ -22,7 +22,7 @@ public class TestTNR1 extends GenericTest {
 		Thread.sleep(1000);
 		assert
 		//(pageTable.productTitles.isDisplayed());
-	
+
 		
 		pageTable.locateElement(pageTable.filtreRoots);
 
