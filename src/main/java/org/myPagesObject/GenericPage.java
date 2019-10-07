@@ -11,7 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import org.openqa.selenium.support.PageFactory;
+
 
 public abstract class GenericPage {
 
@@ -29,11 +29,14 @@ public abstract class GenericPage {
 	@FindBy(how = How.XPATH, using = "//*[@id=\"miniCartSummary\"]/a")
 	public WebElement clickPanier;
 
+
 	public GenericPage(WebDriver driver) {
 		super();
 		this.driver = driver;
 
+
 	}
+
 
 	//Méthode pour extraire liste d'un fichier
 	public List<String> loadFile(String filePath) throws FileNotFoundException {
@@ -46,8 +49,10 @@ public abstract class GenericPage {
 		}
 		s.close();
 
+
 		return list;
 	}
+
 	
 	//Méthode générique pour convertir une liste de WebElement en text
 	public void WebElementToArray(List<WebElement> objectList) {
