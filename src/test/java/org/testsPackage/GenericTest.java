@@ -29,7 +29,8 @@ public abstract class GenericTest {
 			System.setProperty("webdriver.IEDriver.Server", "C:\\Installation\\Drivers\\IEDriverServer.exe");
 			driver = new InternetExplorerDriver();
 		}
-	
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		driver.navigate().to(GenericPage.URL);
 	}
 
 	 @After
