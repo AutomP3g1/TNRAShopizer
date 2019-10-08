@@ -1,23 +1,37 @@
 package org.testsPackage;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.Test;
 import org.myPagesObject.HomePage;
 import org.myPagesObject.PageTable;
 
 public class TestTNR1 extends GenericTest {
+	
+	public List<String> myProductLists = new ArrayList<String>();
+	public List<String> myPriceLists = new ArrayList<String>();
+	public List<String> myJDDLists = new ArrayList<String>();
+	
+	public TestTNR1() {
+		super();
+	}
 
-<<<<<<< HEAD
+	
 	@Test
-	public void testTable() throws InterruptedException {
+	public void testTable() throws InterruptedException, FileNotFoundException {
 		
 		// pas 1 : Ouvrir un navigateur et accéder à l'application Shopizer
 		HomePage homePage = new HomePage(driver);
 
 		// pas 2 : Selectionner dans le menu horizontal la partie "Table"
-		homePage.clickBandeauTable();
-		PageTable pageTable = new PageTable(driver);
+		
+		PageTable pageTable = homePage.clickBandeauTable();
+		Thread.sleep(1000);
 		assertTrue(pageTable.userPath.isDisplayed()); // une arboresence apparait sous le titre de la page indiquant le chemin ou l'utilsateur se situe
 
 		// pas 3 : Verifier la présence des éléments:
@@ -27,7 +41,11 @@ public class TestTNR1 extends GenericTest {
 				- Edge Console
 				- CoffeTable Accacia
 			 */
-		assertTrue(pageTable.productTitles.isDisplayed());
+		Thread.sleep(1000);
+		
+		myProductLists = pageTable.WebElementToArray(pageTable.tablePageProductElements);
+		myJDDLists = pageTable.loadFile("src/test/resources/tablePageProductsElements.txt");
+		assertEquals(myJDDLists, myProductLists);
 		
 		
 		// pas 4 : Vérifier le prix actuel de tout les éléments
@@ -37,8 +55,8 @@ public class TestTNR1 extends GenericTest {
 				Edge Console 749.99 USD
 				CoffeTable Accacia 399.99 USD
 			 */
-		
-		
+		myPriceLists = pageTable.WebElementToArray(pageTable.tablePagePriceElements);
+		myJDDLists = pageTable.loadFile("src/test/resources/tablePagePriceElements.txt");
 		
 		// pas 5 : Selectionner le filtre DEFAULT : il n'y a plus que l'es éléments :Asian Rosewood Console et Edge Console; de présent.
 		pageTable.filtreDefault.click();
@@ -53,7 +71,6 @@ public class TestTNR1 extends GenericTest {
 		Thread.sleep(1000);
 		
 	}
-=======
 	//@Test
 	//public void testTable() throws InterruptedException {
 			
@@ -73,6 +90,5 @@ public class TestTNR1 extends GenericTest {
 //		pageTable.locateElement(pageTable.filtreRoots);
 //
 	//	}
->>>>>>> 89185d28eaf2e4f69b1dbad278b6b1a54a78e3af
 
 }
