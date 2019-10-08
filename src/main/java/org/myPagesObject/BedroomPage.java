@@ -13,7 +13,7 @@ public class BedroomPage {
 	
 	public BedroomPage addToCart (WebDriver driver) throws InterruptedException {
 		driver.findElement(By.xpath("(//a[@class='addToCart'])[1]")).click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("(//a[@class='addToCart'])[2]")).click();
 		return PageFactory.initElements(driver,BedroomPage.class);
 	}
