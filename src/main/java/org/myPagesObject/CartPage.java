@@ -8,13 +8,13 @@ public class CartPage {
 	
 	public CartPage modifyQuantity (WebDriver driver) throws InterruptedException {
 		driver.findElement(By.xpath("(//input[@type='number'])[1]")).clear();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("(//input[@type='number'])[1]")).sendKeys("2");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("(//input[@type='number'])[2]")).clear();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("(//input[@type='number'])[2]")).sendKeys("2");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		return PageFactory.initElements(driver,CartPage.class);
 	}
 	
