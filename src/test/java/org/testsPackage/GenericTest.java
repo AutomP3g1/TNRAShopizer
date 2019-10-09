@@ -25,8 +25,8 @@ public abstract class GenericTest {
 			System.setProperty("webdriver.chrome.driver", "C:\\Installation\\Drivers\\chromedriver.exe");
 			driver = new ChromeDriver();	
 		}
-		else if (BROWSER.equalsIgnoreCase("IE")) {
-			System.setProperty("webdriver.IEDriver.Server", "C:\\Installation\\Drivers\\IEDriverServer.exe");
+		else if (BROWSER.equalsIgnoreCase("IE") || BROWSER.equalsIgnoreCase("Internet Explorer") ) {
+			System.setProperty("webdriver.IEDriverServer", "C:\\Installation\\Drivers\\IEDriverServer.exe");
 			driver = new InternetExplorerDriver();
 		}
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
