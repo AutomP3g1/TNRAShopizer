@@ -53,6 +53,7 @@ public class Test3 extends GenericTest{
 		
 		Thread.sleep(3000);
 		BedroomPage bedroomPage = PageFactory.initElements(driver, BedroomPage.class);
+		Thread.sleep(3000);
 		bedroomPage.addToCart(driver);
 		assertEquals("(2)",driver.findElement(By.xpath("//strong[text()='(2)']")).getText());
 		
