@@ -30,6 +30,7 @@ public abstract class GenericTest {
 			driver = new InternetExplorerDriver();
 		}
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
 		driver.navigate().to(GenericPage.URL);
 	}
 
