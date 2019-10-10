@@ -15,7 +15,7 @@ public class TestHomePage extends GenericTest {
 
 	public List<String> myListElements = new ArrayList<String>();
 	public List<String> myListElementsText = new ArrayList<String>();
-
+	public List<String> myListElementAll = new ArrayList<String>();
 
 
 	public TestHomePage() {
