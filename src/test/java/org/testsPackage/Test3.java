@@ -62,8 +62,8 @@ public class Test3 extends GenericTest{
 		bedroomPage.mouseOverCart(driver);
 		Thread.sleep(3000);
 		
-		assertTrue(driver.findElement(By.xpath("//h1[@class='entry-title']")).getText().contains("Revoir votre commande"));
-		Thread.sleep(2000);
+		//assertTrue(driver.findElement(By.xpath("//h1[@class='entry-title']")).getText().contains("Revoir votre commande"));
+		//Thread.sleep(2000);
 		
 		assertTrue(driver.findElement(By.xpath("//strong[text()='Compact night table']")).isDisplayed());
 		Thread.sleep(1000);
