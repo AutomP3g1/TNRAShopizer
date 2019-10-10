@@ -30,12 +30,16 @@ public class TestHomePage extends GenericTest {
 		HomePage home = new HomePage(driver);
 
 		// Conversion listes WebElements en listes String
-		myListElements = home.WebElementToArray(home.homePageElements);
-		myListElementsText = home.loadFile("src/test/resources/homePageElements.txt");
-		
+		myListElements = home.WebElementToArray(home.homePageElements); //liste de web elements
+		myListElementsText = home.loadFile("src/test/resources/homePageElements.txt"); // liste des produits
+		myListElementAll = home.loadFile("src/test/resources/homePageElementsAll.txt"); // liste produits et prix
 				
-		// To assert listItems with price
-		assertEquals(myListElementsText, myListElements);
+		// Assertion sur les listes d'éléments si le web element contient 8 éléments uniquement la liste des produits sinon liste + prix
+		if (myListElements.size() == 8) {
+			assertEquals(myListElementsText, myListElements);
+		}else {
+		assertEquals(myListElementAll, myListElements);
+		}
 		
 
 
