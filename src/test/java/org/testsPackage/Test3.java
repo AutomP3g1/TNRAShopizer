@@ -65,10 +65,10 @@ public class Test3 extends GenericTest{
 		//assertTrue(driver.findElement(By.xpath("//h1[@class='entry-title']")).getText().contains("Revoir votre commande"));
 		//Thread.sleep(2000);
 		
-		assertTrue(driver.findElement(By.xpath("//strong[text()='Compact night table']")).isDisplayed());
-		Thread.sleep(3000);
-		assertTrue(driver.findElement(By.xpath("//strong[text()='Antique recycled wood storage']")).isDisplayed());
-		Thread.sleep(3000);
+		//assertTrue(driver.findElement(By.xpath("//strong[text()='Compact night table']")).isDisplayed());
+		//Thread.sleep(3000);
+		//assertTrue(driver.findElement(By.xpath("//strong[text()='Antique recycled wood storage']")).isDisplayed());
+		//Thread.sleep(3000);
 		assertEquals("US$1,329.98",driver.findElement(By.xpath("//th[text()='Total']/following-sibling::td/span")).getText());
 	
 		CartPage cartPage = PageFactory.initElements(driver, CartPage.class);
