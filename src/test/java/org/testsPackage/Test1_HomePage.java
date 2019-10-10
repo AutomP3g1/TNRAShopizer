@@ -11,14 +11,14 @@ import org.myPagesObject.HomePage;
 
 
 
-public class TestHomePage extends GenericTest {
+public class Test1_HomePage extends GenericTest {
 
 	public List<String> myListElements = new ArrayList<String>();
 	public List<String> myListElementsText = new ArrayList<String>();
 	public List<String> myListElementAll = new ArrayList<String>();
 
 
-	public TestHomePage() {
+	public Test1_HomePage() {
 
 		super();
 	}
